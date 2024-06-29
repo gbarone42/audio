@@ -1,0 +1,103 @@
+/* General styling */
+body {
+    background-color: #f5f8fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container styling */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Map styling */
+#map {
+    height: 500px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input, .form-group label {
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+}
+
+button.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+button.btn-info:hover {
+    background-color: #117a8b;
+}
+
+/* List styling */
+#ratedPlacesList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.list-group-item {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
