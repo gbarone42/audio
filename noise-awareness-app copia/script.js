@@ -334,3 +334,39 @@ document.addEventListener("DOMContentLoaded", function () {
 	  });
   }
   
+  // Funzioni per il gioco
+  let gameScore = 0;
+  let gameInterval;
+  let timeRemaining = 30;
+  
+  function startGame() {
+	gameScore = 0;
+	timeRemaining = 30;
+	document.getElementById('score').innerText = gameScore;
+	document.getElementById('time-remaining').innerText = timeRemaining;
+	const gameArea = document.getElementById('game');
+	gameArea.innerHTML = '';
+  
+	gameInterval = setInterval(() => {
+	  if (timeRemaining <= 0) {
+		clearInterval(gameInterval);
+		alert(`Gioco terminato! Il tuo punteggio è: ${gameScore}`);
+		return;
+	  }
+  
+	  const noiseObject = document.createElement('div');
+	  noiseObject.classList.add('noise-object');
+	  noiseObject.style.top = `${Math.random() * 350}px`;
+	  noiseObject.style.left = `${Math.random() * 550}px`;
+	  noiseObject.onclick = () => {
+		gameScore++;
+		document.getElementById('score').innerText = gameScore;
+		noiseObject.remove();
+	  };
+	  gameArea.appendChild(noiseObject);
+  
+	  timeRemaining--;
+	  document.getElementById('time-remaining').innerText = timeRemaining;
+	}, 1000);
+  }
+  
