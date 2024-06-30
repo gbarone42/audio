@@ -7,75 +7,75 @@ body {
 	min-height: 100vh;
 	background: linear-gradient(120deg, #d3cce3 0%, #e9e4f0 100%);
 	animation: backgroundAnimation 10s infinite alternate;
-  }
+}
   
-  @keyframes backgroundAnimation {
+@keyframes backgroundAnimation {
 	0% {
 	  background: linear-gradient(120deg, #d3cce3 0%, #e9e4f0 100%);
 	}
 	100% {
 	  background: linear-gradient(120deg, #c9d6ff 0%, #e2e2e2 100%);
 	}
-  }
+}
   
-  header {
+header {
 	background-color: #3f51b5;
 	color: white;
 	padding: 10px 0;
 	text-align: center;
-  }
+}
   
-  nav ul {
+nav ul {
 	list-style: none;
 	padding: 0;
-  }
+}
   
-  nav ul li {
+nav ul li {
 	display: inline;
 	margin: 0 10px;
-  }
+}
   
-  nav ul li a {
+nav ul li a {
 	color: white;
 	text-decoration: none;
-  }
+}
   
-  main {
+main {
 	flex: 1;
 	padding: 20px;
-  }
+}
   
-  .page {
+.page {
 	display: none;
-  }
+}
   
-  .fade-in {
+.fade-in {
 	animation: fadeIn 2s;
-  }
+}
   
-  @keyframes fadeIn {
+@keyframes fadeIn {
 	from {
 	  opacity: 0;
 	}
 	to {
 	  opacity: 1;
 	}
-  }
+}
   
-  footer {
+footer {
 	background-color: #3f51b5;
 	color: white;
 	text-align: center;
 	padding: 10px 0;
-  }
+}
   
-  #game-container {
+#game-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  }
+}
   
-  #game {
+#game {
 	position: relative;
 	width: 600px;
 	height: 400px;
@@ -84,31 +84,31 @@ body {
 	background: url('https://via.placeholder.com/600x400') no-repeat center center;
 	background-size: cover;
 	animation: gameAnimation 10s infinite alternate;
-  }
+}
   
-  @keyframes gameAnimation {
+@keyframes gameAnimation {
 	0% {
 	  background: url('https://via.placeholder.com/600x400') no-repeat center center;
 	}
 	100% {
 	  background: url('https://via.placeholder.com/600x400/000000/FFFFFF/?text=Noise') no-repeat center center;
 	}
-  }
+}
   
-  .noise-object {
+.noise-object {
 	position: absolute;
 	width: 50px;
 	height: 50px;
 	background: url('https://via.placeholder.com/50') no-repeat center center;
 	background-size: contain;
 	cursor: pointer;
-  }
+}
   
-  #game-info {
+#game-info {
 	text-align: center;
-  }
+}
   
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     header {
         padding: 5px 0;
     }
@@ -175,8 +175,6 @@ button:focus, button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Per applicare ombreggiature agli elementi interattivi al passaggio del mouse */
 .box-shadow:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
 }
-

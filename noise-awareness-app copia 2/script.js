@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	generateQuiz('quiz-container-easy', 'easy');
 	generateQuiz('quiz-container-medium', 'medium');
 	generateQuiz('quiz-container-hard', 'hard');
-  });
+});
   
-  function showPage(pageId) {
+function showPage(pageId) {
 	const pages = document.querySelectorAll('.page');
 	pages.forEach(page => {
 	  page.style.display = 'none';
 	});
 	document.getElementById(pageId).style.display = 'block';
-  }
+}
   
-  function shareOnSocialMedia() {
+function shareOnSocialMedia() {
 	const shareUrl = 'http://your-app-url.com';
 	const shareMessage = "Sensibilizziamo sull'inquinamento acustico! Scopri di più su Noise Awareness App.";
 	if (navigator.share) {
@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else {
 	  alert('La condivisione sui social media non è supportata su questo browser.');
 	}
-  }
+}
   
-  function generateQuiz(containerId, level) {
+function generateQuiz(containerId, level) {
 	const quizContainer = document.getElementById(containerId);
 	const questions = {
 	  easy: [
@@ -51,55 +51,37 @@ document.addEventListener("DOMContentLoaded", function () {
 			{ answerText: "Aumento della concentrazione", isCorrect: false }
 		  ]
 		},
-		{
-		  questionText: "A quale livello di decibel l'inquinamento acustico diventa dannoso per l'udito umano?",
-		  options: [
-			{ answerText: "40 dB", isCorrect: false },
-			{ answerText: "60 dB", isCorrect: false },
-			{ answerText: "85 dB", isCorrect: true },
-			{ answerText: "100 dB", isCorrect: false }
-		  ]
-		},
-		{
-		  questionText: "Quale organo del corpo è più colpito dall'inquinamento acustico?",
-		  options: [
-			{ answerText: "Cuore", isCorrect: false },
-			{ answerText: "Polmoni", isCorrect: false },
-			{ answerText: "Orecchie", isCorrect: true },
-			{ answerText: "Stomaco", isCorrect: false }
-		  ]
-		},
-		{
-		  questionText: "Quale ente mondiale stabilisce le linee guida per i livelli di rumore sicuri?",
-		  options: [
-			{ answerText: "WHO (Organizzazione Mondiale della Sanità)", isCorrect: true },
-			{ answerText: "NASA", isCorrect: false },
-			{ answerText: "FBI", isCorrect: false },
-			{ answerText: "UNICEF", isCorrect: false }
-		  ]
-		}
 	  ],
 	  medium: [
 		{
-		  questionText: "Qual è la principale causa dell'inquinamento acustico nelle città?",
-		  options: [
-			{ answerText: "Traffico stradale", isCorrect: true },
-			{ answerText: "Pioggia", isCorrect: false },
-			{ answerText: "Vento", isCorrect: false },
-			{ answerText: "Cani che abbaiano", isCorrect: false }
-		  ]
+			questionText: "Quale organo del corpo è più colpito dall'inquinamento acustico?",
+			options: [
+			  { answerText: "Cuore", isCorrect: false },
+			  { answerText: "Polmoni", isCorrect: false },
+			  { answerText: "Orecchie", isCorrect: true },
+			  { answerText: "Stomaco", isCorrect: false }
+			]
 		},
+		{
+			questionText: "A quale livello di decibel l'inquinamento acustico diventa dannoso per l'udito umano?",
+			options: [
+			  { answerText: "40 dB", isCorrect: false },
+			  { answerText: "60 dB", isCorrect: false },
+			  { answerText: "85 dB", isCorrect: true },
+			  { answerText: "100 dB", isCorrect: false }
+			]
+		  },
 		// More medium level questions...
 	  ],
 	  hard: [
 		{
-		  questionText: "Qual è la principale causa dell'inquinamento acustico nelle città?",
-		  options: [
-			{ answerText: "Traffico stradale", isCorrect: true },
-			{ answerText: "Pioggia", isCorrect: false },
-			{ answerText: "Vento", isCorrect: false },
-			{ answerText: "Cani che abbaiano", isCorrect: false }
-		  ]
+			questionText: "Quale ente mondiale stabilisce le linee guida per i livelli di rumore sicuri?",
+			options: [
+			  { answerText: "WHO (Organizzazione Mondiale della Sanità)", isCorrect: true },
+			  { answerText: "NASA", isCorrect: false },
+			  { answerText: "FBI", isCorrect: false },
+			  { answerText: "UNICEF", isCorrect: false }
+			]
 		},
 		// More hard level questions...
 	  ]
@@ -141,13 +123,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
   
 	showQuestion();
-  }
+}
   
-  // Funzioni per la mappa e le campagne social
-  let map;
-  let draggableMarker;
+// Funzioni per la mappa e le campagne social
+let map;
+let draggableMarker;
   
-  function initMap() {
+function initMap() {
 	map = L.map('map').setView([40.73061, -73.935242], 12); // Default to New York City
   
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -176,9 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
 	// Show saved locations
 	showSavedLocations();
-  }
+}
   
-  function updateAddress(latlng) {
+function updateAddress(latlng) {
 	document.getElementById('placeAddress').value = `${latlng.lat}, ${latlng.lng}`;
 	console.log('Coordinates set to input field:', `${latlng.lat}, ${latlng.lng}`);
   
@@ -195,9 +177,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	  })
 	  .catch(error => console.error('Error fetching address:', error));
-  }
+}
   
-  function loadMap() {
+function loadMap() {
 	const location = document.getElementById('locationInput').value;
 	if (location) {
 	  fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${location}`)
@@ -218,9 +200,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else {
 	  alert('Please enter a location.');
 	}
-  }
+}
   
-  function addNoiseData(location) {
+function addNoiseData(location) {
 	const noiseLevels = [
 	  { lat: parseFloat(location[0]) + 0.01, lng: parseFloat(location[1]), level: 50 },
 	  { lat: parseFloat(location[0]) - 0.01, lng: parseFloat(location[1]), level: 70 },
@@ -241,9 +223,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		1.0: 'red'
 	  }
 	}).addTo(map);
-  }
+}
   
-  function submitRating(event) {
+function submitRating(event) {
 	event.preventDefault();
   
 	const placeName = document.getElementById('placeName').value;
@@ -260,15 +242,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else {
 	  alert('Please provide valid inputs.');
 	}
-  }
+}
   
-  function saveRating(place) {
+function saveRating(place) {
 	const ratings = JSON.parse(localStorage.getItem('ratings')) || [];
 	ratings.push(place);
 	localStorage.setItem('ratings', JSON.stringify(ratings));
-  }
+}
   
-  function showRatings() {
+function showRatings() {
 	const ratings = JSON.parse(localStorage.getItem('ratings')) || [];
 	const list = document.getElementById('ratedPlacesList');
 	list.innerHTML = '';
@@ -288,68 +270,53 @@ document.addEventListener("DOMContentLoaded", function () {
 	  `;
 	  list.appendChild(listItem);
 	});
-  }
+}
   
-  function deleteRating(index) {
+function deleteRating(index) {
 	const ratings = JSON.parse(localStorage.getItem('ratings')) || [];
 	ratings.splice(index, 1);
 	localStorage.setItem('ratings', JSON.stringify(ratings));
 	showRatings();
 	showSavedLocations();
-  }
+}
   
-  function shareOnFacebook(placeName, comment) {
+function shareOnFacebook(placeName, comment) {
 	const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}&quote=${encodeURIComponent(`${placeName}: ${comment}`)}`;
 	window.open(url, '_blank');
-  }
+}
   
-  function shareOnTwitter(placeName, comment) {
+function shareOnTwitter(placeName, comment) {
 	const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${placeName}: ${comment}`)}&url=${encodeURIComponent(location.href)}`;
 	window.open(url, '_blank');
-  }
+}
   
-  function showSavedLocations() {
+function showSavedLocations() {
 	const ratings = JSON.parse(localStorage.getItem('ratings')) || [];
 	ratings.forEach(place => {
 	  const latlng = place.address.split(',').map(coord => parseFloat(coord));
 	  const marker = L.marker(latlng).addTo(map);
 	  marker.bindPopup(`<b>${place.name}</b><br>${place.comment}<br>Rating: ${place.rating}/5`).openPopup();
 	});
-  }
+}
+
+function toggleComments() {
+	const commentsList = document.getElementById('ratedPlacesList');
+	commentsList.style.display = commentsList.style.display === 'none' ? 'block' : 'none';
+}
+
+function sortComments(order) {
+	const ratings = JSON.parse(localStorage.getItem('ratings')) || [];
+	if (order === 'asc') {
+	  ratings.sort((a, b) => a.rating - b.rating);
+	} else {
+	  ratings.sort((a, b) => b.rating - a.rating);
+	}
+	localStorage.setItem('ratings', JSON.stringify(ratings));
+	showRatings();
+}
   
-  // Funzioni per il gioco
-  let gameScore = 0;
-  let gameInterval;
-  let timeRemaining = 30;
-  
-  function startGame() {
-	gameScore = 0;
-	timeRemaining = 30;
-	document.getElementById('score').innerText = gameScore;
-	document.getElementById('time-remaining').innerText = timeRemaining;
-	const gameArea = document.getElementById('game');
-	gameArea.innerHTML = '';
-  
-	gameInterval = setInterval(() => {
-	  if (timeRemaining <= 0) {
-		clearInterval(gameInterval);
-		alert(`Gioco terminato! Il tuo punteggio è: ${gameScore}`);
-		return;
-	  }
-  
-	  const noiseObject = document.createElement('div');
-	  noiseObject.classList.add('noise-object');
-	  noiseObject.style.top = `${Math.random() * 350}px`;
-	  noiseObject.style.left = `${Math.random() * 550}px`;
-	  noiseObject.onclick = () => {
-		gameScore++;
-		document.getElementById('score').innerText = gameScore;
-		noiseObject.remove();
-	  };
-	  gameArea.appendChild(noiseObject);
-  
-	  timeRemaining--;
-	  document.getElementById('time-remaining').innerText = timeRemaining;
-	}, 1000);
-  }
+// Funzioni per il gioco
+let gameScore = 0;
+let gameInterval;
+let timeRemaining = 30;
   

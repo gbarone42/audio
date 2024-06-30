@@ -68,14 +68,6 @@
       <h2>Giochi per eta 3-6</h2>
       <p>Per i bambini tra i 3 e i 6 anni, i giochi sono semplici e interattivi per sviluppare la percezione dei suoni e le abilità motorie di base.</p>
       <p>Clicca sugli oggetti rumorosi per silenziarli e ridurre l'inquinamento acustico!</p>
-      <div id="game-container">
-        <div id="game"></div>
-        <div id="game-info">
-          <p>Punteggio: <span id="score">0</span></p>
-          <p>Tempo Rimasto: <span id="time-remaining">30</span> secondi</p>
-          <button onclick="startGame()">Inizia Gioco</button>
-        </div>
-      </div>
     </section>
 
     <section id="game7-12" class="page fade-in">
@@ -114,6 +106,9 @@
         <br />
         <button type="submit">Invia Valutazione</button>
       </form>
+      <button onclick="toggleComments()">Mostra/Nascondi Commenti</button>
+      <button onclick="sortComments('asc')">Ordina per Valutazione (Crescente)</button>
+      <button onclick="sortComments('desc')">Ordina per Valutazione (Decrescente)</button>
       <ul id="ratedPlacesList" class="list-group"></ul>
     </section>
   </main>
